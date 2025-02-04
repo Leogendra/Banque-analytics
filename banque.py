@@ -14,7 +14,7 @@ def import_csv():
     df = pd.DataFrame()
     for file_name in csv_files:
         print(f"Importation du fichier {file_name}")
-        temp_df = pd.read_csv(file_name, sep=';')
+        temp_df = pd.read_csv(file_name, sep=';', encoding='ISO-8859-1')
         clean_csv(temp_df)
         df = pd.concat([df, temp_df]).drop_duplicates()
 
